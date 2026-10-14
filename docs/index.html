@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logfire Doom</title>
+<style>
+  :root { --bg: #111; --fg: #ccc; --dim: #888; --accent: #e520e9; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 ui-monospace, Menlo, monospace; }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; text-align: center; }
+  h1 { font-size: 18px; margin: 8px 0; }
+  canvas { width: 100%; max-width: 960px; aspect-ratio: 320 / 200; image-rendering: pixelated; border: 1px solid #333; background: #000; }
+  .busy canvas { opacity: .65; }
+  #status { min-height: 1.5em; color: var(--dim); }
+  #pad { display: grid; grid-template-columns: repeat(3, 56px); gap: 6px; justify-content: center; margin: 12px 0; }
+  #pad button { height: 44px; background: #222; color: var(--fg); border: 1px solid #444; border-radius: 6px; font: inherit; }
+  a { color: var(--accent); }
+  p { color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doom, rendered by Logfire</h1>
+  <canvas id="screen" width="320" height="200"></canvas>
+  <div id="status">rendering the first frame</div>
+  <div id="pad">
+    <button data-k="q">⟲</button><button data-k="w">▲</button><button data-k="e">⟳</button>
+    <button data-k="a">◀</button><button data-k="s">▼</button><button data-k="d">▶</button>
+  </div>
+  <p>W/S move, A/D strafe, Q/E or arrows turn, Shift runs. Every frame is one 69 KB SQL query to Logfire's
+  <code>/v2/query</code>, over a map stored as 90,692 spans. No collision, no monsters moving: it is a renderer.</p>
+  <p><a href="https://github.com/adriangb/logfire-doom">Source</a> (GPL-2.0), based on
+  <a href="https://github.com/cedardb/sqldoom">SQLDoom</a> and <a href="https://github.com/querygraph/saildoom">SailDoom</a>,
+  with data from <a href="https://freedoom.github.io/">Freedoom</a>.</p>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

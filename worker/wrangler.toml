@@ -1,0 +1,24 @@
+name = "logfire-doom"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+LOGFIRE_URL = "https://logfire-us.pydantic.dev"
+DOOM_SERVICE = "doom-e1m1"
+# How far back the query scans for the map's spans. Ingest again before this runs out.
+LOOKBACK_DAYS = "30"
+# The GitHub Pages origin. Use "*" only for testing.
+ALLOWED_ORIGIN = "https://adriangb.github.io"
+
+# The read token is a secret: npx wrangler secret put DOOM_READ_TOKEN
+
+[[rules]]
+type = "Text"
+globs = ["**/*.sql"]
+fallthrough = true
+
+# Per visitor IP: each frame is a ~2 s query on Logfire.
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1666"
+simple = { limit = 40, period = 60 }

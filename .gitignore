@@ -1,0 +1,7 @@
+.env
+.dev.vars
+.logfire/
+__pycache__/
+.venv/
+node_modules/
+.wrangler/
