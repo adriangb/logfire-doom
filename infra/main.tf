@@ -45,7 +45,7 @@ variable "lookback_days" {
 
 variable "allowed_origin" {
   type        = string
-  default     = "https://adriangb.github.io"
+  default     = "https://adriangb.com"
   description = "The GitHub Pages origin that may call the Worker."
 }
 

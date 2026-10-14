@@ -8,7 +8,7 @@ DOOM_SERVICE = "doom-e1m1"
 # How far back the query scans for the map's spans. Ingest again before this runs out.
 LOOKBACK_DAYS = "30"
 # The GitHub Pages origin. Use "*" only for testing.
-ALLOWED_ORIGIN = "https://adriangb.github.io"
+ALLOWED_ORIGIN = "https://adriangb.com"
 
 # The read token is a secret: npx wrangler secret put DOOM_READ_TOKEN
 
